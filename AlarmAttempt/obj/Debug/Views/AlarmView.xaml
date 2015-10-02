@@ -1,0 +1,100 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AlarmAttempt.Views"
+    xmlns:const="using:AlarmAttempt.Common"
+    xmlns:custom="using:AlarmAttempt.CustomControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:AlarmAttempt.ViewModel"
+    xmlns:converters="using:AlarmAttempt.Converters"    
+    
+    x:Class="AlarmAttempt.Views.NewAlarmView"    
+    mc:Ignorable="d"    
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding AlarmDetails, Source={StaticResource Locator}}">
+    
+
+    <Page.Resources>
+        <converters:EnumTypeToListConverter x:Key="enumConverter"/>        
+    </Page.Resources>    
+
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="ALARMY" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="Nowy" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+        <MediaElement Name="soundPlayer"/>
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <StackPanel>
+                <TextBox PlaceholderText="Alarm" Text="{Binding Name, Mode=TwoWay}" Header="Nazwa"/>
+
+                <ComboBox ItemsSource="{Binding RepetitionType, Converter={StaticResource enumConverter}}"
+                          PlaceholderText="Wybierz dzień"
+                          Header="Powtórzenia">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TimePicker Time="{Binding Time, Mode=TwoWay}"
+                            ClockIdentifier="24HourClock"
+                            Header="Godzina"/>
+
+                <StackPanel Orientation="Horizontal" Name="VolumeDesc">
+                    <TextBlock Style="{ThemeResource BaseTextBlockStyle}">
+                        <Run Text="Głośność: "/>
+                        <Run Text="{Binding ElementName=slider, Path=Value}"/>
+                        <Run Text="/10"/>
+                    </TextBlock>
+                    
+                </StackPanel>
+                
+                <Slider x:Name="slider" Maximum="10" Value="{Binding Volume, Mode=TwoWay}"/>
+
+                <ComboBox x:Name="soundChooser" Header="Dźwięk"                                                     
+                          ItemsSource="{Binding AvailableSounds}"
+                          SelectedItem="{Binding Sound, Mode=TwoWay}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=DisplayName}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <!--<Button Content="Dźwięk" Command="{Binding AvailableSounds}" />-->
+                <Button x:Name="button" Content="Test Click" Command="{Binding TestButton}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                
+                
+
+
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Icon="Save" Label="Zapisz" IsCompact="True" Command="{Binding SaveAlarm}"/>
+            <AppBarButton Icon="Delete" Label="Usuń" IsCompact="True" Command="{Binding DeleteAlarm}"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
+
