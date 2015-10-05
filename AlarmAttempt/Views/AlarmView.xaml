@@ -44,16 +44,42 @@
             <StackPanel>
                 <TextBox PlaceholderText="Alarm" Text="{Binding Name, Mode=TwoWay}" Header="Nazwa"/>
 
-                <ComboBox ItemsSource="{Binding RepetitionType, Converter={StaticResource enumConverter}}"
+                <!--<ComboBox ItemsSource="{Binding RepetitionType, Converter={StaticResource enumConverter}}"
                           PlaceholderText="Wybierz dzień"
                           Header="Powtórzenia">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding}"/>
+                            <CheckBox Content="{Binding}"/>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
-                </ComboBox>
-
+                </ComboBox>-->
+                <TextBlock Text="Powtórzenia" Style="{ThemeResource ControlHeaderTextBlockStyle}" />
+                <Button x:Name="multiChoiceBox" HorizontalAlignment="Stretch" Content="Jaba daba">
+                    <Button.Flyout>
+                        <Flyout Placement="Full" 
+                                Opening="Flyout_Opening"
+                                Closed="Flyout_Closed">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" Text="Alarm jest powtarzany w" Style="{ThemeResource TitleTextBlockStyle}"/>
+                                <ItemsControl Grid.Row="1"
+                                              ItemsSource="{Binding RepetitionType, Converter={StaticResource enumConverter}}"
+                                              >
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <CheckBox Content="{Binding}" HorizontalAlignment="Stretch"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Grid>                            
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+               
                 <TimePicker Time="{Binding Time, Mode=TwoWay}"
                             ClockIdentifier="24HourClock"
                             Header="Godzina"/>

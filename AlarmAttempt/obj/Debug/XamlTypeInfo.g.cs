@@ -407,6 +407,7 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
                 userType.Activator = Activate_23_NewAlarmView;
                 userType.AddMemberName("NavigationHelper");
                 userType.AddMemberName("DefaultViewModel");
+                userType.AddMemberName("AcceptChoice");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -543,6 +544,11 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
             var that = (global::AlarmAttempt.Views.NewAlarmView)instance;
             return that.DefaultViewModel;
         }
+        private object get_15_NewAlarmView_AcceptChoice(object instance)
+        {
+            var that = (global::AlarmAttempt.Views.NewAlarmView)instance;
+            return that.AcceptChoice;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
@@ -649,6 +655,12 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlarmAttempt.Views.NewAlarmView");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "AlarmAttempt.Common.ObservableDictionary");
                 xamlMember.Getter = get_14_NewAlarmView_DefaultViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
+            case "AlarmAttempt.Views.NewAlarmView.AcceptChoice":
+                userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlarmAttempt.Views.NewAlarmView");
+                xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "AcceptChoice", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_15_NewAlarmView_AcceptChoice;
                 xamlMember.SetIsReadOnly();
                 break;
             }

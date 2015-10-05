@@ -1,21 +1,9 @@
 ﻿using AlarmAttempt.Common;
-using AlarmAttempt.ViewModel;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Graphics.Display;
+using System.Windows.Input;
 using Windows.Storage;
-using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -29,6 +17,7 @@ namespace AlarmAttempt.Views
     {
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
+        private CommandBar alarmViewCommandBar;
 
         public NewAlarmView()
         {
@@ -38,6 +27,7 @@ namespace AlarmAttempt.Views
             this.navigationHelper.LoadState += this.NavigationHelper_LoadState;
             this.navigationHelper.SaveState += this.NavigationHelper_SaveState;
             //defaultViewModel.Add("newAlarm", new NewAlarmViewModel()); 
+            alarmViewCommandBar = BottomAppBar as CommandBar;
         }
 
         /// <summary>
@@ -116,6 +106,30 @@ namespace AlarmAttempt.Views
             soundPlayer.Volume = 0.1;
             soundPlayer.Source = new Uri((soundChooser.SelectedItem as StorageFile).Path);
             soundPlayer.Play();
+        }
+
+        private void Flyout_Opening(object sender, object e)
+        {
+            var flyoutCommandBar = new CommandBar();            
+            flyoutCommandBar.PrimaryCommands.Add(new AppBarButton() { Icon = new SymbolIcon(Symbol.Accept), Label = "Gotowe", Command = AcceptChoice});
+            flyoutCommandBar.PrimaryCommands.Add(new AppBarButton() { Icon = new SymbolIcon(Symbol.Cancel), Label = "Anuluj" });
+            BottomAppBar = flyoutCommandBar;
+        }
+
+        private void Flyout_Closed(object sender, object e)
+        {
+            BottomAppBar = alarmViewCommandBar;
+        }
+
+        public ICommand AcceptChoice
+        {
+            get
+            {
+                return new RelayCommand((parameter) => 
+                {
+                    multiChoiceBox.Content = "Codziennie";
+                });
+            }
         }
     }
 }

@@ -31,6 +31,11 @@ namespace AlarmAttempt.ViewModel
         {
             get
             {
+                if (alarms == null)
+                {
+                    alarms = new ObservableCollection<Alarm>();
+                }
+
                 return alarms;
             }
             private set
@@ -47,7 +52,7 @@ namespace AlarmAttempt.ViewModel
 
         private async void ReadAlarmsAsync()
         {
-            Alarms = await StorageManager.ReadFromFile<ObservableCollection<Alarm>>("alarms.json", ApplicationData.Current.LocalCacheFolder);            
+            Alarms = await StorageManager.ReadFromFile<ObservableCollection<Alarm>>("alarms.json", ApplicationData.Current.LocalCacheFolder);
         }
         #endregion
 

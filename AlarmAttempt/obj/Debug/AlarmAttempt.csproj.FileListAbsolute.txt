@@ -63,3 +63,11 @@ C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Views\AlarmView.xaml
 C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Views\AlarmView.xbf
 C:\TestRepos\AlarmAttempt\AlarmAttempt\bin\Debug\Microsoft.Xaml.Interactions.dll
 C:\TestRepos\AlarmAttempt\AlarmAttempt\bin\Debug\Microsoft.Xaml.Interactivity.dll
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\layout.resfiles
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\layout.resfiles.intermediate
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\Resources.resfiles
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\Resources.resfiles.intermediate
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\pri.resfiles
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\pri.resfiles.intermediate
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\priconfig.xml
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\priconfig.xml.intermediate
