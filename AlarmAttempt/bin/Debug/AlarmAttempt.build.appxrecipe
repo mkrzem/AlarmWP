@@ -82,6 +82,9 @@
     <AppxPackagedFile Include="C:\TestRepos\AlarmAttempt\AlarmAttempt\bin\Debug\CustomUI\DebugInfoPopup.xbf">
       <PackagePath>CustomUI\DebugInfoPopup.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\TestRepos\AlarmAttempt\AlarmAttempt\bin\Debug\CustomUI\DaysMultiSelectBox.xbf">
+      <PackagePath>CustomUI\DaysMultiSelectBox.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\TestRepos\AlarmAttempt\AlarmAttempt\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>

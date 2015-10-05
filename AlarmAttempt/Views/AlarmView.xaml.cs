@@ -106,30 +106,6 @@ namespace AlarmAttempt.Views
             soundPlayer.Volume = 0.1;
             soundPlayer.Source = new Uri((soundChooser.SelectedItem as StorageFile).Path);
             soundPlayer.Play();
-        }
-
-        private void Flyout_Opening(object sender, object e)
-        {
-            var flyoutCommandBar = new CommandBar();            
-            flyoutCommandBar.PrimaryCommands.Add(new AppBarButton() { Icon = new SymbolIcon(Symbol.Accept), Label = "Gotowe", Command = AcceptChoice});
-            flyoutCommandBar.PrimaryCommands.Add(new AppBarButton() { Icon = new SymbolIcon(Symbol.Cancel), Label = "Anuluj" });
-            BottomAppBar = flyoutCommandBar;
-        }
-
-        private void Flyout_Closed(object sender, object e)
-        {
-            BottomAppBar = alarmViewCommandBar;
-        }
-
-        public ICommand AcceptChoice
-        {
-            get
-            {
-                return new RelayCommand((parameter) => 
-                {
-                    multiChoiceBox.Content = "Codziennie";
-                });
-            }
-        }
+        }                
     }
 }

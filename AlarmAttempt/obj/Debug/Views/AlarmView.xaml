@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:AlarmAttempt.Views"
     xmlns:const="using:AlarmAttempt.Common"
-    xmlns:custom="using:AlarmAttempt.CustomControls"
+    xmlns:custom="using:AlarmAttempt.CustomUI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ViewModel="using:AlarmAttempt.ViewModel"
@@ -13,12 +13,6 @@
     mc:Ignorable="d"    
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{Binding AlarmDetails, Source={StaticResource Locator}}">
-    
-
-    <Page.Resources>
-        <converters:EnumTypeToListConverter x:Key="enumConverter"/>        
-    </Page.Resources>    
-
 
     <Grid x:Name="LayoutRoot">
 
@@ -44,42 +38,9 @@
             <StackPanel>
                 <TextBox PlaceholderText="Alarm" Text="{Binding Name, Mode=TwoWay}" Header="Nazwa"/>
 
-                <!--<ComboBox ItemsSource="{Binding RepetitionType, Converter={StaticResource enumConverter}}"
-                          PlaceholderText="Wybierz dzień"
-                          Header="Powtórzenia">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <CheckBox Content="{Binding}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>-->
-                <TextBlock Text="Powtórzenia" Style="{ThemeResource ControlHeaderTextBlockStyle}" />
-                <Button x:Name="multiChoiceBox" HorizontalAlignment="Stretch" Content="Jaba daba">
-                    <Button.Flyout>
-                        <Flyout x:ConnectionId='1' Placement="Full" 
-                                                        
-                                                      >
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="Auto"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" Text="Alarm jest powtarzany w" Style="{ThemeResource TitleTextBlockStyle}"/>
-                                <ItemsControl Grid.Row="1"
-                                              ItemsSource="{Binding RepetitionType, Converter={StaticResource enumConverter}}"
-                                              >
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <CheckBox Content="{Binding}" HorizontalAlignment="Stretch"/>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </Grid>                            
-                        </Flyout>
-                    </Button.Flyout>
-                </Button>
-               
+                <custom:DaysMultiSelectBox Header="Powtórzenia"
+                                           />
+
                 <TimePicker Time="{Binding Time, Mode=TwoWay}"
                             ClockIdentifier="24HourClock"
                             Header="Godzina"/>

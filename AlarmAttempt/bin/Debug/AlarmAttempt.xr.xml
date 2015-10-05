@@ -4,11 +4,14 @@
     <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="Items" />
+    <RootPropertyPathName Name="IsSelected" />
+    <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="Header" />
     <RootPropertyPathName Name="MainPage" />
     <RootPropertyPathName Name="Alarms" />
     <RootPropertyPathName Name="EditAlarm" />
     <RootPropertyPathName Name="IsOn" />
-    <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="Time" />
     <RootPropertyPathName Name="NewAlarm" />
     <RootPropertyPathName Name="AlarmDetails" />
@@ -18,7 +21,6 @@
     <RootPropertyPathName Name="DisplayName" />
     <RootPropertyPathName Name="Volume" />
     <RootPropertyPathName Name="Value" />
-    <RootPropertyPathName Name="RepetitionType" />
     <RootPropertyPathName Name="DeleteAlarm" />
     <RootPropertyPathName Name="SaveAlarm" />
   </Roots.PropertyPathNames>
@@ -30,6 +32,7 @@
     <RootType FullName="AlarmAttempt.ViewModel.ViewModelLocator" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
       <RootProperty Name="Content" />
+      <RootProperty Name="DataContext" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Primitives.Popup">
       <RootProperty Name="IsOpen" />
@@ -45,36 +48,29 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="Style" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Text" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="CharacterSpacing" />
       <RootProperty Name="Inlines" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="AlarmAttempt.CustomUI.DebugInfoPopup" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Page">
-      <RootProperty Name="Background" />
-      <RootProperty Name="DataContext" />
-      <RootProperty Name="Resources" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="BottomAppBar" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Source" />
+      <RootProperty Name="RelativeSource" />
       <RootProperty Name="Mode" />
+      <RootProperty Name="Source" />
       <RootProperty Name="Path" />
       <RootProperty Name="Converter" />
       <RootProperty Name="ConverterParameter" />
       <RootProperty Name="ElementName" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension">
-      <RootProperty Name="ResourceKey" />
+    <RootType FullName="Windows.UI.Xaml.Data.RelativeSource">
+      <RootProperty Name="Mode" />
     </RootType>
-    <RootType FullName="AlarmAttempt.Converters.StringFormatConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
+      <RootProperty Name="RowDefinitions" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="ChildrenTransitions" />
@@ -84,15 +80,54 @@
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
-      <RootProperty Name="Height" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Margin" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Name" />
       <RootProperty Name="Orientation" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Flyout" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="VerticalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Flyout">
+      <RootProperty Name="Placement" />
+      <RootProperty Name="Content" />
+      <RootEvent Name="Opening" />
+      <RootEvent Name="Closed" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ItemsControl">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="ItemTemplate" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.DataTemplate">
+      <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
+      <RootProperty Name="IsChecked" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="HorizontalAlignment" />
+    </RootType>
+    <RootType FullName="AlarmAttempt.CustomUI.DaysMultiSelectBox">
+      <RootProperty Name="Header" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Page">
+      <RootProperty Name="Background" />
+      <RootProperty Name="DataContext" />
+      <RootProperty Name="Resources" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="BottomAppBar" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension">
+      <RootProperty Name="ResourceKey" />
+    </RootType>
+    <RootType FullName="AlarmAttempt.Converters.StringFormatConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="Background" />
@@ -120,9 +155,6 @@
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.DataTemplate">
-      <RootProperty Name="Template" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
@@ -141,7 +173,6 @@
       <RootProperty Name="Command" />
     </RootType>
     <RootType FullName="AlarmAttempt.MainPage" />
-    <RootType FullName="AlarmAttempt.Converters.EnumTypeToListConverter" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
     <RootType FullName="Windows.UI.Xaml.Controls.MediaElement">
@@ -151,13 +182,6 @@
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Text" />
       <RootProperty Name="Header" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="Flyout" />
-      <RootProperty Name="Command" />
-      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TimePicker">
       <RootProperty Name="Time" />
@@ -176,20 +200,6 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Documents.Run">
       <RootProperty Name="Text" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Flyout">
-      <RootProperty Name="Placement" />
-      <RootProperty Name="Content" />
-      <RootEvent Name="Opening" />
-      <RootEvent Name="Closed" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ItemsControl">
-      <RootProperty Name="ItemsSource" />
-      <RootProperty Name="ItemTemplate" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
-      <RootProperty Name="Content" />
-      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="AlarmAttempt.Views.NewAlarmView" />
   </Roots.RootTypes>

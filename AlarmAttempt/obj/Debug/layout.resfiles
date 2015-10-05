@@ -8,6 +8,7 @@ Assets\WideLogo.scale-240.png
 Assets\wp81-icon-58px.scale-240.png
 AlarmAttempt.xr.xml
 App.xbf
+CustomUI\DaysMultiSelectBox.xbf
 CustomUI\DebugInfoPopup.xbf
 MainPage.xbf
 Views\AlarmView.xbf

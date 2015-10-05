@@ -124,7 +124,7 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[26];
+            _typeNameTable = new string[30];
             _typeNameTable[0] = "AlarmAttempt.ViewModel.ViewModelLocator";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "AlarmAttempt.ViewModel.MainViewModel";
@@ -134,25 +134,29 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
             _typeNameTable[6] = "AlarmAttempt.ViewModel.AlarmViewModel";
             _typeNameTable[7] = "AlarmAttempt.CustomUI.DebugInfoPopup";
             _typeNameTable[8] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[9] = "AlarmAttempt.Converters.StringFormatConverter";
-            _typeNameTable[10] = "Microsoft.Xaml.Interactivity.Interaction";
-            _typeNameTable[11] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
-            _typeNameTable[12] = "Windows.UI.Xaml.DependencyObjectCollection";
-            _typeNameTable[13] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[14] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
-            _typeNameTable[15] = "Microsoft.Xaml.Interactivity.ActionCollection";
-            _typeNameTable[16] = "String";
-            _typeNameTable[17] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
-            _typeNameTable[18] = "System.Windows.Input.ICommand";
-            _typeNameTable[19] = "Windows.UI.Xaml.Data.IValueConverter";
-            _typeNameTable[20] = "AlarmAttempt.MainPage";
-            _typeNameTable[21] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[22] = "AlarmAttempt.Converters.EnumTypeToListConverter";
-            _typeNameTable[23] = "AlarmAttempt.Views.NewAlarmView";
-            _typeNameTable[24] = "AlarmAttempt.Common.NavigationHelper";
-            _typeNameTable[25] = "AlarmAttempt.Common.ObservableDictionary";
+            _typeNameTable[9] = "AlarmAttempt.CustomUI.DaysMultiSelectBox";
+            _typeNameTable[10] = "String";
+            _typeNameTable[11] = "System.Collections.ObjectModel.ObservableCollection`1<AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>";
+            _typeNameTable[12] = "System.Collections.ObjectModel.Collection`1<AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>";
+            _typeNameTable[13] = "AlarmAttempt.CustomUI.DaysMultiSelectBox.Day";
+            _typeNameTable[14] = "Boolean";
+            _typeNameTable[15] = "System.Windows.Input.ICommand";
+            _typeNameTable[16] = "AlarmAttempt.Converters.StringFormatConverter";
+            _typeNameTable[17] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[18] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[19] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[20] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[21] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[22] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[23] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[24] = "Windows.UI.Xaml.Data.IValueConverter";
+            _typeNameTable[25] = "AlarmAttempt.MainPage";
+            _typeNameTable[26] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[27] = "AlarmAttempt.Views.NewAlarmView";
+            _typeNameTable[28] = "AlarmAttempt.Common.NavigationHelper";
+            _typeNameTable[29] = "AlarmAttempt.Common.ObservableDictionary";
 
-            _typeTable = new global::System.Type[26];
+            _typeTable = new global::System.Type[30];
             _typeTable[0] = typeof(global::AlarmAttempt.ViewModel.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::AlarmAttempt.ViewModel.MainViewModel);
@@ -162,23 +166,27 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
             _typeTable[6] = typeof(global::AlarmAttempt.ViewModel.AlarmViewModel);
             _typeTable[7] = typeof(global::AlarmAttempt.CustomUI.DebugInfoPopup);
             _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[9] = typeof(global::AlarmAttempt.Converters.StringFormatConverter);
-            _typeTable[10] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
-            _typeTable[11] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
-            _typeTable[12] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
-            _typeTable[13] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[14] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
-            _typeTable[15] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
-            _typeTable[16] = typeof(global::System.String);
-            _typeTable[17] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
-            _typeTable[18] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[19] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
-            _typeTable[20] = typeof(global::AlarmAttempt.MainPage);
-            _typeTable[21] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[22] = typeof(global::AlarmAttempt.Converters.EnumTypeToListConverter);
-            _typeTable[23] = typeof(global::AlarmAttempt.Views.NewAlarmView);
-            _typeTable[24] = typeof(global::AlarmAttempt.Common.NavigationHelper);
-            _typeTable[25] = typeof(global::AlarmAttempt.Common.ObservableDictionary);
+            _typeTable[9] = typeof(global::AlarmAttempt.CustomUI.DaysMultiSelectBox);
+            _typeTable[10] = typeof(global::System.String);
+            _typeTable[11] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>);
+            _typeTable[12] = typeof(global::System.Collections.ObjectModel.Collection<global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>);
+            _typeTable[13] = typeof(global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day);
+            _typeTable[14] = typeof(global::System.Boolean);
+            _typeTable[15] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[16] = typeof(global::AlarmAttempt.Converters.StringFormatConverter);
+            _typeTable[17] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[18] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[19] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[20] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[21] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[22] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[23] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[24] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
+            _typeTable[25] = typeof(global::AlarmAttempt.MainPage);
+            _typeTable[26] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[27] = typeof(global::AlarmAttempt.Views.NewAlarmView);
+            _typeTable[28] = typeof(global::AlarmAttempt.Common.NavigationHelper);
+            _typeTable[29] = typeof(global::AlarmAttempt.Common.ObservableDictionary);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -217,28 +225,42 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
         private object Activate_2_MainViewModel() { return new global::AlarmAttempt.ViewModel.MainViewModel(); }
         private object Activate_4_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
         private object Activate_7_DebugInfoPopup() { return new global::AlarmAttempt.CustomUI.DebugInfoPopup(); }
-        private object Activate_9_StringFormatConverter() { return new global::AlarmAttempt.Converters.StringFormatConverter(); }
-        private object Activate_11_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
-        private object Activate_14_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
-        private object Activate_15_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
-        private object Activate_17_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
-        private object Activate_20_MainPage() { return new global::AlarmAttempt.MainPage(); }
-        private object Activate_22_EnumTypeToListConverter() { return new global::AlarmAttempt.Converters.EnumTypeToListConverter(); }
-        private object Activate_23_NewAlarmView() { return new global::AlarmAttempt.Views.NewAlarmView(); }
-        private object Activate_25_ObservableDictionary() { return new global::AlarmAttempt.Common.ObservableDictionary(); }
-        private void VectorAdd_11_BehaviorCollection(object instance, object item)
+        private object Activate_9_DaysMultiSelectBox() { return new global::AlarmAttempt.CustomUI.DaysMultiSelectBox(); }
+        private object Activate_11_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>(); }
+        private object Activate_12_Collection() { return new global::System.Collections.ObjectModel.Collection<global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>(); }
+        private object Activate_16_StringFormatConverter() { return new global::AlarmAttempt.Converters.StringFormatConverter(); }
+        private object Activate_18_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_21_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_22_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_23_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
+        private object Activate_25_MainPage() { return new global::AlarmAttempt.MainPage(); }
+        private object Activate_27_NewAlarmView() { return new global::AlarmAttempt.Views.NewAlarmView(); }
+        private object Activate_29_ObservableDictionary() { return new global::AlarmAttempt.Common.ObservableDictionary(); }
+        private void VectorAdd_11_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>)instance;
+            var newItem = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_12_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>)instance;
+            var newItem = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_18_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_15_ActionCollection(object instance, object item)
+        private void VectorAdd_22_ActionCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void MapAdd_25_ObservableDictionary(object instance, object key, object item)
+        private void MapAdd_29_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
             var newKey = (global::System.String)key;
@@ -313,37 +335,84 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
                 xamlType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  AlarmAttempt.Converters.StringFormatConverter
-                userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_9_StringFormatConverter;
+            case 9:   //  AlarmAttempt.CustomUI.DaysMultiSelectBox
+                userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_9_DaysMultiSelectBox;
+                userType.AddMemberName("Header");
+                userType.AddMemberName("Items");
+                userType.AddMemberName("AcceptChoice");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  Microsoft.Xaml.Interactivity.Interaction
+            case 10:   //  String
+                xamlType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 11:   //  System.Collections.ObjectModel.ObservableCollection`1<AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>
+                userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>"));
+                userType.CollectionAdd = VectorAdd_11_ObservableCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 12:   //  System.Collections.ObjectModel.Collection`1<AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>
+                userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_12_Collection;
+                userType.CollectionAdd = VectorAdd_12_Collection;
+                xamlType = userType;
+                break;
+
+            case 13:   //  AlarmAttempt.CustomUI.DaysMultiSelectBox.Day
+                userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("GalaSoft.MvvmLight.ObservableObject"));
+                userType.AddMemberName("IsSelected");
+                userType.AddMemberName("Name");
+                userType.AddMemberName("Abbreviation");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 14:   //  Boolean
+                xamlType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 15:   //  System.Windows.Input.ICommand
+                userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 16:   //  AlarmAttempt.Converters.StringFormatConverter
+                userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_16_StringFormatConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 17:   //  Microsoft.Xaml.Interactivity.Interaction
                 userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Behaviors");
                 xamlType = userType;
                 break;
 
-            case 11:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+            case 18:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
                 userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_11_BehaviorCollection;
+                userType.CollectionAdd = VectorAdd_18_BehaviorCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 12:   //  Windows.UI.Xaml.DependencyObjectCollection
+            case 19:   //  Windows.UI.Xaml.DependencyObjectCollection
                 xamlType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  Windows.UI.Xaml.DependencyObject
+            case 20:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 14:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+            case 21:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
                 userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_14_EventTriggerBehavior;
+                userType.Activator = Activate_21_EventTriggerBehavior;
                 userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
                 userType.AddMemberName("Actions");
                 userType.AddMemberName("EventName");
@@ -352,20 +421,16 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 15:   //  Microsoft.Xaml.Interactivity.ActionCollection
+            case 22:   //  Microsoft.Xaml.Interactivity.ActionCollection
                 userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_15_ActionCollection;
+                userType.CollectionAdd = VectorAdd_22_ActionCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 16:   //  String
-                xamlType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 17:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
+            case 23:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
                 userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_17_InvokeCommandAction;
+                userType.Activator = Activate_23_InvokeCommandAction;
                 userType.AddMemberName("Command");
                 userType.AddMemberName("CommandParameter");
                 userType.AddMemberName("InputConverter");
@@ -374,54 +439,40 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 18:   //  System.Windows.Input.ICommand
-                userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 19:   //  Windows.UI.Xaml.Data.IValueConverter
+            case 24:   //  Windows.UI.Xaml.Data.IValueConverter
                 xamlType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 20:   //  AlarmAttempt.MainPage
+            case 25:   //  AlarmAttempt.MainPage
                 userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_20_MainPage;
+                userType.Activator = Activate_25_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 21:   //  Windows.UI.Xaml.Controls.Page
+            case 26:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 22:   //  AlarmAttempt.Converters.EnumTypeToListConverter
-                userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_22_EnumTypeToListConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 23:   //  AlarmAttempt.Views.NewAlarmView
+            case 27:   //  AlarmAttempt.Views.NewAlarmView
                 userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_23_NewAlarmView;
+                userType.Activator = Activate_27_NewAlarmView;
                 userType.AddMemberName("NavigationHelper");
                 userType.AddMemberName("DefaultViewModel");
-                userType.AddMemberName("AcceptChoice");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 24:   //  AlarmAttempt.Common.NavigationHelper
+            case 28:   //  AlarmAttempt.Common.NavigationHelper
                 userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 25:   //  AlarmAttempt.Common.ObservableDictionary
+            case 29:   //  AlarmAttempt.Common.ObservableDictionary
                 userType = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.DictionaryAdd = MapAdd_25_ObservableDictionary;
+                userType.DictionaryAdd = MapAdd_29_ObservableDictionary;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -446,108 +497,158 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
             var that = (global::AlarmAttempt.ViewModel.ViewModelLocator)instance;
             return that.AlarmDetails;
         }
-        private object get_3_Interaction_Behaviors(object instance)
+        private object get_3_DaysMultiSelectBox_Header(object instance)
+        {
+            var that = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox)instance;
+            return that.Header;
+        }
+        private void set_3_DaysMultiSelectBox_Header(object instance, object Value)
+        {
+            var that = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox)instance;
+            that.Header = (global::System.String)Value;
+        }
+        private object get_4_DaysMultiSelectBox_Items(object instance)
+        {
+            var that = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox)instance;
+            return that.Items;
+        }
+        private void set_4_DaysMultiSelectBox_Items(object instance, object Value)
+        {
+            var that = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox)instance;
+            that.Items = (global::System.Collections.ObjectModel.ObservableCollection<global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>)Value;
+        }
+        private object get_5_Day_IsSelected(object instance)
+        {
+            var that = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day)instance;
+            return that.IsSelected;
+        }
+        private void set_5_Day_IsSelected(object instance, object Value)
+        {
+            var that = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day)instance;
+            that.IsSelected = (global::System.Boolean)Value;
+        }
+        private object get_6_Day_Name(object instance)
+        {
+            var that = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day)instance;
+            return that.Name;
+        }
+        private void set_6_Day_Name(object instance, object Value)
+        {
+            var that = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day)instance;
+            that.Name = (global::System.String)Value;
+        }
+        private object get_7_Day_Abbreviation(object instance)
+        {
+            var that = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day)instance;
+            return that.Abbreviation;
+        }
+        private void set_7_Day_Abbreviation(object instance, object Value)
+        {
+            var that = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox.Day)instance;
+            that.Abbreviation = (global::System.String)Value;
+        }
+        private object get_8_DaysMultiSelectBox_AcceptChoice(object instance)
+        {
+            var that = (global::AlarmAttempt.CustomUI.DaysMultiSelectBox)instance;
+            return that.AcceptChoice;
+        }
+        private object get_9_Interaction_Behaviors(object instance)
         {
             return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_3_Interaction_Behaviors(object instance, object Value)
+        private void set_9_Interaction_Behaviors(object instance, object Value)
         {
             global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
         }
-        private object get_4_EventTriggerBehavior_Actions(object instance)
+        private object get_10_EventTriggerBehavior_Actions(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.Actions;
         }
-        private object get_5_EventTriggerBehavior_EventName(object instance)
+        private object get_11_EventTriggerBehavior_EventName(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.EventName;
         }
-        private void set_5_EventTriggerBehavior_EventName(object instance, object Value)
+        private void set_11_EventTriggerBehavior_EventName(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.EventName = (global::System.String)Value;
         }
-        private object get_6_EventTriggerBehavior_SourceObject(object instance)
+        private object get_12_EventTriggerBehavior_SourceObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.SourceObject;
         }
-        private void set_6_EventTriggerBehavior_SourceObject(object instance, object Value)
+        private void set_12_EventTriggerBehavior_SourceObject(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.SourceObject = (global::System.Object)Value;
         }
-        private object get_7_EventTriggerBehavior_AssociatedObject(object instance)
+        private object get_13_EventTriggerBehavior_AssociatedObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.AssociatedObject;
         }
-        private object get_8_InvokeCommandAction_Command(object instance)
+        private object get_14_InvokeCommandAction_Command(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.Command;
         }
-        private void set_8_InvokeCommandAction_Command(object instance, object Value)
+        private void set_14_InvokeCommandAction_Command(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.Command = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_9_InvokeCommandAction_CommandParameter(object instance)
+        private object get_15_InvokeCommandAction_CommandParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.CommandParameter;
         }
-        private void set_9_InvokeCommandAction_CommandParameter(object instance, object Value)
+        private void set_15_InvokeCommandAction_CommandParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.CommandParameter = (global::System.Object)Value;
         }
-        private object get_10_InvokeCommandAction_InputConverter(object instance)
+        private object get_16_InvokeCommandAction_InputConverter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverter;
         }
-        private void set_10_InvokeCommandAction_InputConverter(object instance, object Value)
+        private void set_16_InvokeCommandAction_InputConverter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
         }
-        private object get_11_InvokeCommandAction_InputConverterParameter(object instance)
+        private object get_17_InvokeCommandAction_InputConverterParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterParameter;
         }
-        private void set_11_InvokeCommandAction_InputConverterParameter(object instance, object Value)
+        private void set_17_InvokeCommandAction_InputConverterParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterParameter = (global::System.Object)Value;
         }
-        private object get_12_InvokeCommandAction_InputConverterLanguage(object instance)
+        private object get_18_InvokeCommandAction_InputConverterLanguage(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterLanguage;
         }
-        private void set_12_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
+        private void set_18_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterLanguage = (global::System.String)Value;
         }
-        private object get_13_NewAlarmView_NavigationHelper(object instance)
+        private object get_19_NewAlarmView_NavigationHelper(object instance)
         {
             var that = (global::AlarmAttempt.Views.NewAlarmView)instance;
             return that.NavigationHelper;
         }
-        private object get_14_NewAlarmView_DefaultViewModel(object instance)
+        private object get_20_NewAlarmView_DefaultViewModel(object instance)
         {
             var that = (global::AlarmAttempt.Views.NewAlarmView)instance;
             return that.DefaultViewModel;
-        }
-        private object get_15_NewAlarmView_AcceptChoice(object instance)
-        {
-            var that = (global::AlarmAttempt.Views.NewAlarmView)instance;
-            return that.AcceptChoice;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -575,92 +676,123 @@ namespace AlarmAttempt.AlarmAttempt_XamlTypeInfo
                 xamlMember.Getter = get_2_ViewModelLocator_AlarmDetails;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "AlarmAttempt.CustomUI.DaysMultiSelectBox.Header":
+                userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlarmAttempt.CustomUI.DaysMultiSelectBox");
+                xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "Header", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_3_DaysMultiSelectBox_Header;
+                xamlMember.Setter = set_3_DaysMultiSelectBox_Header;
+                break;
+            case "AlarmAttempt.CustomUI.DaysMultiSelectBox.Items":
+                userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlarmAttempt.CustomUI.DaysMultiSelectBox");
+                xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "Items", "System.Collections.ObjectModel.ObservableCollection`1<AlarmAttempt.CustomUI.DaysMultiSelectBox.Day>");
+                xamlMember.Getter = get_4_DaysMultiSelectBox_Items;
+                xamlMember.Setter = set_4_DaysMultiSelectBox_Items;
+                break;
+            case "AlarmAttempt.CustomUI.DaysMultiSelectBox.Day.IsSelected":
+                userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlarmAttempt.CustomUI.DaysMultiSelectBox.Day");
+                xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "IsSelected", "Boolean");
+                xamlMember.Getter = get_5_Day_IsSelected;
+                xamlMember.Setter = set_5_Day_IsSelected;
+                break;
+            case "AlarmAttempt.CustomUI.DaysMultiSelectBox.Day.Name":
+                userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlarmAttempt.CustomUI.DaysMultiSelectBox.Day");
+                xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "Name", "String");
+                xamlMember.Getter = get_6_Day_Name;
+                xamlMember.Setter = set_6_Day_Name;
+                break;
+            case "AlarmAttempt.CustomUI.DaysMultiSelectBox.Day.Abbreviation":
+                userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlarmAttempt.CustomUI.DaysMultiSelectBox.Day");
+                xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "Abbreviation", "String");
+                xamlMember.Getter = get_7_Day_Abbreviation;
+                xamlMember.Setter = set_7_Day_Abbreviation;
+                break;
+            case "AlarmAttempt.CustomUI.DaysMultiSelectBox.AcceptChoice":
+                userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlarmAttempt.CustomUI.DaysMultiSelectBox");
+                xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "AcceptChoice", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_8_DaysMultiSelectBox_AcceptChoice;
+                xamlMember.SetIsReadOnly();
+                break;
             case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_3_Interaction_Behaviors;
-                xamlMember.Setter = set_3_Interaction_Behaviors;
+                xamlMember.Getter = get_9_Interaction_Behaviors;
+                xamlMember.Setter = set_9_Interaction_Behaviors;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_4_EventTriggerBehavior_Actions;
+                xamlMember.Getter = get_10_EventTriggerBehavior_Actions;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "EventName", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_5_EventTriggerBehavior_EventName;
-                xamlMember.Setter = set_5_EventTriggerBehavior_EventName;
+                xamlMember.Getter = get_11_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_11_EventTriggerBehavior_EventName;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_6_EventTriggerBehavior_SourceObject;
-                xamlMember.Setter = set_6_EventTriggerBehavior_SourceObject;
+                xamlMember.Getter = get_12_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_12_EventTriggerBehavior_SourceObject;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_7_EventTriggerBehavior_AssociatedObject;
+                xamlMember.Getter = get_13_EventTriggerBehavior_AssociatedObject;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_8_InvokeCommandAction_Command;
-                xamlMember.Setter = set_8_InvokeCommandAction_Command;
+                xamlMember.Getter = get_14_InvokeCommandAction_Command;
+                xamlMember.Setter = set_14_InvokeCommandAction_Command;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_9_InvokeCommandAction_CommandParameter;
-                xamlMember.Setter = set_9_InvokeCommandAction_CommandParameter;
+                xamlMember.Getter = get_15_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_15_InvokeCommandAction_CommandParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_InvokeCommandAction_InputConverter;
-                xamlMember.Setter = set_10_InvokeCommandAction_InputConverter;
+                xamlMember.Getter = get_16_InvokeCommandAction_InputConverter;
+                xamlMember.Setter = set_16_InvokeCommandAction_InputConverter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "InputConverterParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_11_InvokeCommandAction_InputConverterParameter;
-                xamlMember.Setter = set_11_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Getter = get_17_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Setter = set_17_InvokeCommandAction_InputConverterParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "InputConverterLanguage", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_12_InvokeCommandAction_InputConverterLanguage;
-                xamlMember.Setter = set_12_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Getter = get_18_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Setter = set_18_InvokeCommandAction_InputConverterLanguage;
                 break;
             case "AlarmAttempt.Views.NewAlarmView.NavigationHelper":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlarmAttempt.Views.NewAlarmView");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "NavigationHelper", "AlarmAttempt.Common.NavigationHelper");
-                xamlMember.Getter = get_13_NewAlarmView_NavigationHelper;
+                xamlMember.Getter = get_19_NewAlarmView_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "AlarmAttempt.Views.NewAlarmView.DefaultViewModel":
                 userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlarmAttempt.Views.NewAlarmView");
                 xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "AlarmAttempt.Common.ObservableDictionary");
-                xamlMember.Getter = get_14_NewAlarmView_DefaultViewModel;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "AlarmAttempt.Views.NewAlarmView.AcceptChoice":
-                userType = (global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AlarmAttempt.Views.NewAlarmView");
-                xamlMember = new global::AlarmAttempt.AlarmAttempt_XamlTypeInfo.XamlMember(this, "AcceptChoice", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_15_NewAlarmView_AcceptChoice;
+                xamlMember.Getter = get_20_NewAlarmView_DefaultViewModel;
                 xamlMember.SetIsReadOnly();
                 break;
             }

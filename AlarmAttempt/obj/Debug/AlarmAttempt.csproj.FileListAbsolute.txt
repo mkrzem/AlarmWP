@@ -48,7 +48,6 @@ C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\AlarmAttempt.csproj.GenerateRes
 C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation.pri
 C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\qualifiers.txt
 C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\GalaSoft.MvvmLight.Platform.pri.xml
-C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\AlarmAttempt.csprojResolveAssemblyReference.cache
 C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\CustomUI\DebugInfoPopup.g.i.cs
 C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\CustomUI\DebugInfoPopup.g.cs
 C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\CustomUI\DebugInfoPopup.xaml
@@ -63,11 +62,9 @@ C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Views\AlarmView.xaml
 C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Views\AlarmView.xbf
 C:\TestRepos\AlarmAttempt\AlarmAttempt\bin\Debug\Microsoft.Xaml.Interactions.dll
 C:\TestRepos\AlarmAttempt\AlarmAttempt\bin\Debug\Microsoft.Xaml.Interactivity.dll
-C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\layout.resfiles
-C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\layout.resfiles.intermediate
-C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\Resources.resfiles
-C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\Resources.resfiles.intermediate
-C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\pri.resfiles
-C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\pri.resfiles.intermediate
-C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\priconfig.xml
-C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\Microsoft.Practices.ServiceLocation\priconfig.xml.intermediate
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\CustomUI\DaysMultiSelectBox.g.i.cs
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\CustomUI\DaysMultiSelectBox.g.cs
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\CustomUI\DaysMultiSelectBox.xaml
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\CustomUI\DaysMultiSelectBox.xbf
+C:\TestRepos\AlarmAttempt\AlarmAttempt\bin\Debug\CustomUI\DaysMultiSelectBox.xbf
+C:\TestRepos\AlarmAttempt\AlarmAttempt\obj\Debug\AlarmAttempt.csprojResolveAssemblyReference.cache
