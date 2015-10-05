@@ -1,20 +1,24 @@
 ﻿using AlarmAttempt.Common;
 using GalaSoft.MvvmLight;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using System;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace AlarmAttempt.CustomUI
 {
-    public sealed partial class DaysMultiSelectBox : UserControl
+    public sealed partial class DaysMultiSelectBox : UserControl, INotifyPropertyChanged
     {
         private ObservableCollection<Day> items = new ObservableCollection<Day>();
-        private ObservableCollection<Day> selectedItems = new ObservableCollection<Day>();
+        private HashSet<Day> selectedItems = new HashSet<Day>();
         private CommandBar viewOriginalCommandBar;
+        private bool choiceAccepted;
+
+        public event PropertyChangedEventHandler PropertyChanged;
         public DaysMultiSelectBox()
         {
             InitializeComponent();
@@ -44,8 +48,7 @@ namespace AlarmAttempt.CustomUI
 
         // Using a DependencyProperty as the backing store for Header.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty HeaderProperty =
-            DependencyProperty.Register("Header", typeof(string), typeof(DaysMultiSelectBox), new PropertyMetadata(0));
-
+            DependencyProperty.Register("Header", typeof(string), typeof(DaysMultiSelectBox), new PropertyMetadata(0));        
 
         #endregion
 
@@ -63,18 +66,19 @@ namespace AlarmAttempt.CustomUI
         #region Events
         private void Flyout_Opening(object sender, object e)
         {
-            var page = (Window.Current.Content as Frame).Content as Page;
-            viewOriginalCommandBar = page.BottomAppBar as CommandBar;
-
-            var flyoutCommandBar = new CommandBar();
-            flyoutCommandBar.PrimaryCommands.Add(new AppBarButton() { Icon = new SymbolIcon(Symbol.Accept), Label = "Gotowe", Command = AcceptChoice });
-            flyoutCommandBar.PrimaryCommands.Add(new AppBarButton() { Icon = new SymbolIcon(Symbol.Cancel), Label = "Anuluj" });
-            ((Window.Current.Content as Frame).Content as Page).BottomAppBar = flyoutCommandBar;
-        }
+            SwitchOrAddCommandBar();
+            choiceAccepted = false;
+        }       
 
         private void Flyout_Closed(object sender, object e)
         {
             ((Window.Current.Content as Frame).Content as Page).BottomAppBar = viewOriginalCommandBar;
+
+            if (!choiceAccepted)
+            {
+                BackupCurrentItems();
+                RaisePropertyChanged(nameof(Items));                
+            }
         }
         #endregion
 
@@ -83,26 +87,69 @@ namespace AlarmAttempt.CustomUI
         {
             get
             {
-                return new RelayCommand((parameter) =>
-                {
-                    string displayText = "";
-                    foreach (Day day in items)
-                    {
-                        if (day.IsSelected)
-                        {
-                            selectedItems.Add(day);
-                            displayText += day.Abbreviation + ",";
-                        }
-                    }
-
-                    SetDisplayText(displayText.TrimEnd(new char[] { ',' }));
-                    multiChoiceBox.Flyout.Hide();
-                });
+                return new RelayCommand((parameter) => Accept());
+            }
+        }
+       
+        public ICommand CancelChoice
+        {
+            get
+            {
+                return new RelayCommand((parameter) => Cancel());
             }
         }
         #endregion
 
-        #region Helper Methods
+        #region Private Methods
+        private void BackupCurrentItems()
+        {
+            foreach (Day day in items)
+            {
+                if (!selectedItems.Contains(day))
+                {
+                    day.IsSelected = false;
+                }
+            }
+        }
+
+        private void SwitchOrAddCommandBar()
+        {
+            var page = (Window.Current.Content as Frame).Content as Page;
+            viewOriginalCommandBar = page.BottomAppBar as CommandBar;
+
+            var flyoutCommandBar = new CommandBar();
+            flyoutCommandBar.PrimaryCommands.Add(new AppBarButton() { Icon = new SymbolIcon(Symbol.Accept), Label = "Gotowe", Command = AcceptChoice });
+            flyoutCommandBar.PrimaryCommands.Add(new AppBarButton() { Icon = new SymbolIcon(Symbol.Cancel), Label = "Anuluj", Command = CancelChoice });
+            ((Window.Current.Content as Frame).Content as Page).BottomAppBar = flyoutCommandBar;
+        }
+        #endregion
+
+        #region Command Helper Methods
+        private void Accept()
+        {
+            string displayText = "";
+            choiceAccepted = true;
+            selectedItems.Clear();
+
+            foreach (Day day in items)
+            {
+                if (day.IsSelected)
+                {
+                    selectedItems.Add(day);
+                    displayText += day.Abbreviation + ",";
+                }
+            }
+
+            BackupCurrentItems();            
+            SetDisplayText(displayText.TrimEnd(new char[] { ',' }));
+            multiChoiceBox.Flyout.Hide();
+        }
+        
+        private void Cancel()
+        {
+            multiChoiceBox.Flyout.Hide();
+        }
+
         private void SetDisplayText(string displayText)
         {
             if ("Pn,Wt,Śr,Czw,Pt,Sb,Nd".Equals(displayText))
@@ -119,6 +166,16 @@ namespace AlarmAttempt.CustomUI
             }
 
             multiChoiceBox.Content = displayText;
+        }
+        #endregion
+
+        #region INotifyPropertyChanged
+        private void RaisePropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
         #endregion
 
