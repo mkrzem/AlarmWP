@@ -21,6 +21,7 @@
     <RootPropertyPathName Name="DisplayName" />
     <RootPropertyPathName Name="Volume" />
     <RootPropertyPathName Name="Value" />
+    <RootPropertyPathName Name="PageTitle" />
     <RootPropertyPathName Name="DeleteAlarm" />
     <RootPropertyPathName Name="SaveAlarm" />
   </Roots.PropertyPathNames>

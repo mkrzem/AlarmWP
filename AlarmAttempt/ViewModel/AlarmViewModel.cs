@@ -28,20 +28,16 @@ namespace AlarmAttempt.ViewModel
         private bool viewValid = true;
         private StorageFile sound;
         private IReadOnlyList<StorageFile> sounds;
+        private string pageTitle;
 
         public AlarmViewModel(INavigationService navigationService)
         {            
             this.navigationService = navigationService;
             Messenger.Default.Register<AlarmMessage>(this, Tokens.Edit, EditAlarm);
-            ReadSounds();
-            newAlarm = new Alarm()
-            {
-                IsOn = true,
-                Repetition = Enums.StartDays.Monday,
-                Nap = false
-            };            
+            Messenger.Default.Register<AlarmMessage>(this, Tokens.CreateNew, CreateNewAlarm);
+            ReadSounds(); 
         }
-
+        
         private async void ReadSounds()
         {            
             StorageFolder soundsFolder = await Package.Current.InstalledLocation.GetFolderAsync("Assets");
@@ -49,6 +45,10 @@ namespace AlarmAttempt.ViewModel
         }
 
         #region Properties
+        public string PageTitle
+        {
+            get { return pageTitle; }
+        }
         public Type RepetitionType
         {
             get
@@ -218,8 +218,19 @@ namespace AlarmAttempt.ViewModel
         }
 
         #region Private Methods
+        private void CreateNewAlarm(AlarmMessage message)
+        {
+            pageTitle = "Nowy";
+            newAlarm = new Alarm()
+            {
+                IsOn = true,
+                Repetition = Enums.StartDays.Monday,
+                Nap = false
+            };
+        }
         private void EditAlarm(AlarmMessage message)
         {
+            pageTitle = "Edytuj";
             newAlarm = message.Alarm;
         }
         #endregion

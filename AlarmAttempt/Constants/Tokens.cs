@@ -11,5 +11,6 @@ namespace AlarmAttempt.Constants
         public const string Save = "SAVE";
         public const string Delete = "DELETE";
         public const string Edit = "EDIT";
+        public const string CreateNew = "CREATE_NEW";
     }
 }

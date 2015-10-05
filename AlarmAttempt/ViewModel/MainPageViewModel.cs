@@ -75,6 +75,7 @@ namespace AlarmAttempt.ViewModel
                 return new RelayCommand((parameter) =>
                 {
                     navigationService.NavigateTo(Pages.AlarmDetails);
+                    Messenger.Default.Send(new AlarmMessage() { Alarm = null }, Tokens.CreateNew);
                 });
             }
         }
