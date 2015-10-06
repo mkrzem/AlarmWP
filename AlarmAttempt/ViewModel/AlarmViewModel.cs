@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Windows.Input;
 using Windows.ApplicationModel;
 using Windows.Storage;
+using Windows.UI.Input;
 using Windows.UI.Xaml.Controls;
 
 namespace AlarmAttempt.ViewModel
@@ -19,7 +20,6 @@ namespace AlarmAttempt.ViewModel
     {        
         private Alarm newAlarm;
         private INavigationService navigationService;
-        private bool viewValid = true;
         private StorageFile sound;
         private IReadOnlyList<StorageFile> sounds;
         private string pageTitle;
@@ -80,11 +80,13 @@ namespace AlarmAttempt.ViewModel
         {
             get { return newAlarm.Name; }
             set
-            {
+            {                
                 if (value != newAlarm.Name)
                 {
+                    var oldValue = newAlarm.Name;   
                     newAlarm.Name = value;
                     RaisePropertyChanged(nameof(Name));
+                    Broadcast(oldValue, newAlarm.Name, nameof(Name));
                 }
             }
         }
@@ -102,9 +104,8 @@ namespace AlarmAttempt.ViewModel
             }
             set
             {
-                sound = value;
+                Set(ref sound, value, broadcast: true);
                 newAlarm.Sound = new Uri(sound.Path);
-                RaisePropertyChanged(nameof(Sound));
             }
         }
 
@@ -182,7 +183,10 @@ namespace AlarmAttempt.ViewModel
         {
             get
             {
-                return new RelayCommand((parameter) => Save(), () => Validate());
+                var command = new AutoRelayCommand((param) => Save());
+                command.DependsOn(() => Name);
+                command.DependsOn(() => Sound);
+                return command;
             }
         }
 
@@ -197,7 +201,13 @@ namespace AlarmAttempt.ViewModel
 
         #region Command Helper Methods
         private void Save()
-        {            
+        {
+            if (!Validate())
+            {
+                var dialogService = new DialogService();
+                dialogService.ShowMessage("Wysztkie wartości alarmu muszą być wypełnione", "Dane Alarmu");
+                return;
+            }            
             Messenger.Default.Send(new AlarmMessage() { Alarm = newAlarm }, Tokens.Save);
             navigationService.GoBack();
         }
@@ -210,14 +220,15 @@ namespace AlarmAttempt.ViewModel
         #endregion
         #region Private Methods
         private bool Validate()
-        {
-            return true;
+        {            
+            return !(string.IsNullOrEmpty(newAlarm.Name) || sound == null);
         }
         private void CreateNewAlarm(AlarmMessage message)
         {
             pageTitle = "Nowy";
             newAlarm = new Alarm()
             {
+                Name = "",
                 IsOn = true,
                 Repetition = Enums.StartDays.Monday,
                 Nap = false

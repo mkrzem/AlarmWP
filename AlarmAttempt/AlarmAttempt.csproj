@@ -90,6 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\Attributes\DisplayAttribute.cs" />
+    <Compile Include="Common\AutoRelayCommand.cs" />
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Common\ObservableDictionary.cs" />
