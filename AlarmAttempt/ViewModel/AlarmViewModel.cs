@@ -176,6 +176,16 @@ namespace AlarmAttempt.ViewModel
                 RaisePropertyChanged(nameof(AvailableSounds));
             }
         }
+
+        private bool isEnabled;
+        public bool IsEnabled
+        {
+            get { return isEnabled; }
+            set
+            {
+                Set(nameof(IsEnabled), ref isEnabled, value);
+            }
+        }
         #endregion
 
         #region Commands                
@@ -183,7 +193,7 @@ namespace AlarmAttempt.ViewModel
         {
             get
             {
-                var command = new AutoRelayCommand((param) => Save());
+                var command = new AutoRelayCommand((param) => Save(), () => Validate());
                 command.DependsOn(() => Name);
                 command.DependsOn(() => Sound);
                 return command;
@@ -201,13 +211,7 @@ namespace AlarmAttempt.ViewModel
 
         #region Command Helper Methods
         private void Save()
-        {
-            if (!Validate())
-            {
-                var dialogService = new DialogService();
-                dialogService.ShowMessage("Wysztkie wartości alarmu muszą być wypełnione", "Dane Alarmu");
-                return;
-            }            
+        {           
             Messenger.Default.Send(new AlarmMessage() { Alarm = newAlarm }, Tokens.Save);
             navigationService.GoBack();
         }
@@ -220,8 +224,17 @@ namespace AlarmAttempt.ViewModel
         #endregion
         #region Private Methods
         private bool Validate()
-        {            
+        {
             return !(string.IsNullOrEmpty(newAlarm.Name) || sound == null);
+            //{
+            //    IsEnabled = false;
+            //}
+            //else
+            //{
+            //    IsEnabled = true;
+            //}
+
+            //return IsEnabled;
         }
         private void CreateNewAlarm(AlarmMessage message)
         {

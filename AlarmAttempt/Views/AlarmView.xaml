@@ -72,8 +72,10 @@
 
     <Page.BottomAppBar>
         <CommandBar>
-            <AppBarButton Icon="Save" Label="Zapisz" IsCompact="True" Command="{Binding SaveAlarm}"/>
-            <AppBarButton Icon="Delete" Label="Usuń" IsCompact="True" Command="{Binding DeleteAlarm}"/>
+            <AppBarButton Icon="Save" Label="Zapisz" IsCompact="True" 
+                          Command="{Binding SaveAlarm}" />
+            <AppBarButton Icon="Delete" Label="Usuń" IsCompact="True" 
+                          Command="{Binding DeleteAlarm}"/>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>
