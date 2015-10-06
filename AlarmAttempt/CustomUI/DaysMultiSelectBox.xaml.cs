@@ -217,7 +217,6 @@ namespace AlarmAttempt.CustomUI
                     RaisePropertyChanged(nameof(Abbreviation));
                 }
             }
-        }        
-        
+        }
     }
 }

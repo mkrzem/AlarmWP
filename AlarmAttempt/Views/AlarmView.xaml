@@ -38,8 +38,7 @@
             <StackPanel>
                 <TextBox PlaceholderText="Alarm" Text="{Binding Name, Mode=TwoWay}" Header="Nazwa"/>
 
-                <custom:DaysMultiSelectBox Header="Powtórzenia"
-                                           />
+                <custom:DaysMultiSelectBox Header="Powtórzenia" />
 
                 <TimePicker Time="{Binding Time, Mode=TwoWay}"
                             ClockIdentifier="24HourClock"

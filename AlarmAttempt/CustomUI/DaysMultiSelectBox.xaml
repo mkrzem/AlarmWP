@@ -13,7 +13,16 @@
     <Grid>
         <StackPanel>
             <TextBlock x:Name="header" Text="{Binding Header}" Style="{ThemeResource ControlHeaderTextBlockStyle}" />
-            <Button x:Name="multiChoiceBox" HorizontalAlignment="Stretch" >
+            <Button x:Name="multiChoiceBox" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="5,7" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                            <TextBlock Style="{ThemeResource ControlHeaderTextBlockStyle}" HorizontalAlignment="Stretch"
+                                   Text="{TemplateBinding Content}"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
                 <Button.Flyout>
                     <Flyout Placement="Full" 
                         Opening="Flyout_Opening"

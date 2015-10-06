@@ -100,12 +100,6 @@ namespace AlarmAttempt.Views
         }
 
         #endregion
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            soundPlayer.Volume = 0.1;
-            soundPlayer.Source = new Uri((soundChooser.SelectedItem as StorageFile).Path);
-            soundPlayer.Play();
-        }                
+                
     }
 }

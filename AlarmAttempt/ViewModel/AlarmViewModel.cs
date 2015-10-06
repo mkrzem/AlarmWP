@@ -8,21 +8,15 @@ using GalaSoft.MvvmLight.Messaging;
 using GalaSoft.MvvmLight.Views;
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.ApplicationModel;
-using Windows.Data.Xml.Dom;
 using Windows.Storage;
-using Windows.Storage.Pickers;
-using Windows.Storage.Search;
-using Windows.UI.Notifications;
 using Windows.UI.Xaml.Controls;
 
 namespace AlarmAttempt.ViewModel
 {
     public class AlarmViewModel : ViewModelBase
-    {
-        private MediaElement mediaElement = new MediaElement();
+    {        
         private Alarm newAlarm;
         private INavigationService navigationService;
         private bool viewValid = true;
@@ -31,13 +25,18 @@ namespace AlarmAttempt.ViewModel
         private string pageTitle;
 
         public AlarmViewModel(INavigationService navigationService)
-        {            
+        {
             this.navigationService = navigationService;
+            RegisterMessages();
+            ReadSounds();
+        }
+
+        private void RegisterMessages()
+        {
             Messenger.Default.Register<AlarmMessage>(this, Tokens.Edit, EditAlarm);
             Messenger.Default.Register<AlarmMessage>(this, Tokens.CreateNew, CreateNewAlarm);
-            ReadSounds(); 
         }
-        
+
         private async void ReadSounds()
         {            
             StorageFolder soundsFolder = await Package.Current.InstalledLocation.GetFolderAsync("Assets");
@@ -183,7 +182,7 @@ namespace AlarmAttempt.ViewModel
         {
             get
             {
-                return new RelayCommand((parameter) => Save(), () => viewValid);
+                return new RelayCommand((parameter) => Save(), () => Validate());
             }
         }
 
@@ -198,8 +197,7 @@ namespace AlarmAttempt.ViewModel
 
         #region Command Helper Methods
         private void Save()
-        {
-            
+        {            
             Messenger.Default.Send(new AlarmMessage() { Alarm = newAlarm }, Tokens.Save);
             navigationService.GoBack();
         }
@@ -211,6 +209,10 @@ namespace AlarmAttempt.ViewModel
         }
         #endregion
         #region Private Methods
+        private bool Validate()
+        {
+            return true;
+        }
         private void CreateNewAlarm(AlarmMessage message)
         {
             pageTitle = "Nowy";
