@@ -178,63 +178,7 @@ namespace AlarmAttempt.ViewModel
         }
         #endregion
 
-        #region Commands
-        public ICommand TestButton
-        {
-            get
-            {
-                return new RelayCommand(async (parameter) => 
-                {
-                    string baseStr =
-                          "<toast duration=\"long\">\n" +
-                            "<visual>\n" +
-                              "<binding template=\"ToastText02\">\n" +
-                                "<text id=\"1\">{0}</text>\n" +
-                                "<text id=\"2\">{1}</text>\n" +
-                              "</binding>\n" +
-                            "</visual>\n" +
-                          "</toast>\n";
-
-                    await Task.Run(() =>
-                    {
-                        for (int i = 0; i < 5000; i++)
-                        {
-                            string textLine1 = "Sample Toast App " + i;
-                            string textLine2 = "This is a sample message.";
-                            string contentString = string.Format(baseStr, textLine1, textLine2);
-                            XmlDocument xmlDocument = new XmlDocument();
-                            xmlDocument.LoadXml(contentString);
-
-                            ToastNotifier toastNotifier = ToastNotificationManager.CreateToastNotifier();
-                            ToastNotification toast = new ToastNotification(xmlDocument);
-                            
-                            var scheduledToast = new ScheduledToastNotification(xmlDocument, DateTime.Now.AddSeconds(45.0));
-                            
-                            toastNotifier.AddToSchedule(scheduledToast);
-                        }
-                    });
-                });
-            }
-        }
-
-        #region Private Methods
-        private void CreateNewAlarm(AlarmMessage message)
-        {
-            pageTitle = "Nowy";
-            newAlarm = new Alarm()
-            {
-                IsOn = true,
-                Repetition = Enums.StartDays.Monday,
-                Nap = false
-            };
-        }
-        private void EditAlarm(AlarmMessage message)
-        {
-            pageTitle = "Edytuj";
-            newAlarm = message.Alarm;
-        }
-        #endregion
-
+        #region Commands                
         public ICommand SaveAlarm
         {
             get
@@ -264,6 +208,23 @@ namespace AlarmAttempt.ViewModel
         {
             Messenger.Default.Send(new AlarmMessage() { Alarm = newAlarm }, Tokens.Delete);
             navigationService.GoBack();
+        }
+        #endregion
+        #region Private Methods
+        private void CreateNewAlarm(AlarmMessage message)
+        {
+            pageTitle = "Nowy";
+            newAlarm = new Alarm()
+            {
+                IsOn = true,
+                Repetition = Enums.StartDays.Monday,
+                Nap = false
+            };
+        }
+        private void EditAlarm(AlarmMessage message)
+        {
+            pageTitle = "Edytuj";
+            newAlarm = message.Alarm;
         }
         #endregion
     }
